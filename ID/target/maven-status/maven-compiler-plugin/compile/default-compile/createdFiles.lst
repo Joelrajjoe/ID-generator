@@ -1,0 +1,4 @@
+com\idcard\IdCardGeneratorApplication.class
+com\idcard\controller\IdCardController.class
+com\idcard\IdCardGeneratorApplication$1.class
+com\idcard\model\IdCard.class

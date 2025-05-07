@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Card Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="card-generator">
+            <h1>ID Card Generator</h1>
+            <form id="idCardForm">
+                <div class="form-group">
+                    <label for="companyLogo">Company Logo</label>
+                    <input type="file" id="companyLogo" name="companyLogo" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="employeeId">Employee ID</label>
+                    <input type="text" id="employeeId" name="employeeId" required>
+                </div>
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <input type="text" id="department" name="department" required>
+                </div>
+                <div class="form-group">
+                    <label for="position">Position</label>
+                    <input type="text" id="position" name="position" required>
+                </div>
+                <div class="form-group">
+                    <label for="photo">Employee Photo</label>
+                    <input type="file" id="photo" name="photo" accept="image/*" required>
+                </div>
+                <button type="submit" class="generate-btn">Generate ID Card</button>
+            </form>
+        </div>
+        
+        <div class="preview-section">
+            <h2>Preview</h2>
+            <div class="id-card" id="idCardPreview">
+                <div class="id-card-header">
+                    <div class="company-logo-container">
+                        <img id="previewCompanyLogo" class="company-logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='80' height='80' fill='%23ffffff' fill-opacity='0.2'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='12' fill='%23ffffff'%3ELogo%3C/text%3E%3C/svg%3E" alt="Company Logo">
+                    </div>
+                    <h3>Employee ID Card</h3>
+                </div>
+                <div class="id-card-body">
+                    <div class="photo-container">
+                        <img id="previewPhoto" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Crect width='120' height='120' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='14' fill='%23999'%3EPhoto%3C/text%3E%3C/svg%3E" alt="Employee Photo">
+                    </div>
+                    <div class="details">
+                        <p><strong>Name:</strong> <span id="previewName">-</span></p>
+                        <p><strong>ID:</strong> <span id="previewId">-</span></p>
+                        <p><strong>Department:</strong> <span id="previewDepartment">-</span></p>
+                        <p><strong>Position:</strong> <span id="previewPosition">-</span></p>
+                    </div>
+                </div>
+                <div class="id-card-footer">
+                    <p>Valid until: <span id="validUntil">-</span></p>
+                </div>
+            </div>
+            <button id="downloadBtn" class="download-btn" disabled>Download ID Card</button>
+        </div>
+    </div>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
